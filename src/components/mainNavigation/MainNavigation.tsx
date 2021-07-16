@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
-import React, { useState, useCallback, SyntheticEvent, useRef } from 'react';
+import React, { useCallback, SyntheticEvent, useRef } from 'react';
 import Hidden from '@material-ui/core/Hidden';
 
 import MainNavigationProps from './MainNavigation.types';
@@ -28,8 +28,6 @@ import Menu from '../menu';
 const MainNavigation: React.FC<MainNavigationProps> = ({
     children,
     showItems,
-    onShowItems,
-    onDismissItems,
     logoUrl = imageLogo,
     hasAlerts,
     onClickAlerts,
@@ -39,19 +37,19 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     anchor = false,
     className,
     menuItems,
+    onMobileMenuOpen,
+    onMobileMenuClose,
+    isMobileMenuOpen = false,
 }) => {
     const theme = useTheme();
-    const [itemsShown, setItemsShown] = useState(showItems);
-    const handleShowItems = useCallback(() => {
-        setItemsShown(true);
-        if (onShowItems) {
-            onShowItems();
+    const handleMobileMenuOpen = useCallback(() => {
+        if (onMobileMenuOpen) {
+            onMobileMenuOpen();
         }
     }, []);
-    const handleDismissItems = useCallback(() => {
-        setItemsShown(false);
-        if (onDismissItems) {
-            onDismissItems();
+    const handleMobileMenuClose = useCallback(() => {
+        if (onMobileMenuClose) {
+            onMobileMenuClose();
         }
     }, []);
     const handleBellClicked = useCallback((event: SyntheticEvent) => {
@@ -101,25 +99,25 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                         onClick={handleProfilePictureClicked}
                     />
                     <Hidden mdUp>
-                        {itemsShown ? (
+                        {isMobileMenuOpen ? (
                             <img
                                 alt="Close"
                                 src={imageClose}
                                 css={mainNavigationCloseImage}
-                                onClick={() => handleDismissItems()}
+                                onClick={() => handleMobileMenuClose()}
                             />
                         ) : (
                             <img
                                 alt="Toggle"
                                 src={imageHamburger}
                                 css={mainNavigationHamburgerImage}
-                                onClick={() => handleShowItems()}
+                                onClick={() => handleMobileMenuOpen()}
                             />
                         )}
                     </Hidden>
                 </div>
             </div>
-            {itemsShown && (
+            {showItems && (
                 <Hidden mdUp>
                     <div css={mainNavigationItemContainer()}>
                         {secondaryItems ? secondaryItems : children}
