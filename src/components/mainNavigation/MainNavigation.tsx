@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, useTheme } from '@emotion/react';
-import React, { useState, useCallback, SyntheticEvent, useRef } from 'react';
+import React, { useCallback, SyntheticEvent, useRef } from 'react';
 import Hidden from '@material-ui/core/Hidden';
 
 import MainNavigationProps from './MainNavigation.types';
@@ -39,17 +39,15 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     menuItems,
     onMobileMenuOpen,
     onMobileMenuClose,
+    isMobileMenuOpen = false,
 }) => {
     const theme = useTheme();
-    const [itemsShown, setItemsShown] = useState(false);
     const handleMobileMenuOpen = useCallback(() => {
-        setItemsShown(true);
         if (onMobileMenuOpen) {
             onMobileMenuOpen();
         }
     }, []);
     const handleMobileMenuClose = useCallback(() => {
-        setItemsShown(false);
         if (onMobileMenuClose) {
             onMobileMenuClose();
         }
@@ -101,7 +99,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
                         onClick={handleProfilePictureClicked}
                     />
                     <Hidden mdUp>
-                        {itemsShown ? (
+                        {isMobileMenuOpen ? (
                             <img
                                 alt="Close"
                                 src={imageClose}

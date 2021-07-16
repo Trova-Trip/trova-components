@@ -34,6 +34,7 @@ export const ShowItems = () => {
             ]}
             onMobileMenuOpen={() => setShowItems(true)}
             onMobileMenuClose={() => setShowItems(false)}
+            isMobileMenuOpen={!showItems}
         >
             <MainNavigationItem content="Trips" selected={true} />
             <MainNavigationItem content="Livestreams" />

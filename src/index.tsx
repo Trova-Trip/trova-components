@@ -33,6 +33,7 @@ import Loader, { LoaderSize } from './components/loader';
 import Currency from './components/currency';
 import RadioGroup from './components/RadioGroup';
 import Dialog from './components/Dialog';
+import { isMobile } from 'react-device-detect';
 
 export {
     Sidebar,
@@ -83,5 +84,6 @@ export {
     LoaderSize,
     Currency,
     RadioGroup,
-    Dialog
+    Dialog,
+    isMobile,
 };

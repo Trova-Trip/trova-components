@@ -16,4 +16,5 @@ export default interface MainNavigationProps extends SimpleComponent {
     menuItems?: Array<ReactElement<typeof MenuItem>>;
     onMobileMenuOpen?: () => void;
     onMobileMenuClose?: () => void;
+    isMobileMenuOpen?: boolean;
 }
