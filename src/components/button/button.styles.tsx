@@ -70,6 +70,7 @@ export const button = (
 `}
 
     ${buttonType === ButtonType.Secondary &&
+    !disabled &&
     `background-color: ${Colors.Secondary};
     color: ${Colors.Primary};
     &:hover {
@@ -78,6 +79,12 @@ export const button = (
      &:active{
         background-color: ${Colors.DarkSecondary};
     }`}
+    ${buttonType === ButtonType.Secondary &&
+    disabled &&
+    `cursor: auto;
+     background-color: ${Colors.LightSecondary};
+     color: ${Colors.SemiDarkPrimary};
+    `}
     ${buttonType === ButtonType.Text &&
     `color: ${Colors.DarkGray};
     &:hover {
