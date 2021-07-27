@@ -44,6 +44,7 @@ declare module '@emotion/react' {
             menuText: string;
         };
         breakpoints: {
+            xs: number;
             sm: number;
             md: number;
             lg: number;
