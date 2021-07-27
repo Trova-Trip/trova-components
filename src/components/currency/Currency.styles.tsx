@@ -40,6 +40,12 @@ export const innerContainer = (
     margin-top: 10px;
     width: ${theme.columns.twoColumns}px;
     ${size === ComponentWidth.ExtraSmall && `max-width: 120px;`}
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        width: 100%;
+    }
+    @media (max-width: ${theme.breakpoints.xs - 1}px) {
+        width: 140px;
+    }
 `;
 
 export const currencyTypeStyle = (
@@ -63,6 +69,9 @@ export const currencyTypeStyle = (
     ${size === ComponentWidth.ExtraSmall &&
     `min-height: 31px; padding: 0 .5rem; font-size: ${theme.fontSizes.extraSmallInput};margin-top: 0px;line-height: 16px;`}
     ${currencyPosition === 'right' && `border-radius: 0 0.5rem 0.5rem 0;`}
+    @media (max-width: ${theme.breakpoints.xs - 1}px) {
+        padding: 0 0.5rem;
+    }
 `;
 
 export const input = (

@@ -42,6 +42,9 @@ export const innerContainer = (
     svg {
         margin-right: 20px;
     }
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        width: 100%;
+    }
 `;
 
 export const changeButton = () => css`

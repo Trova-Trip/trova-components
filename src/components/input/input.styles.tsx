@@ -126,11 +126,11 @@ export const detailSpan = (theme: Theme) => css`
 
 export const disabledSpan = (theme: Theme) => css`
     box-sizing: border-box;
-    font-family: ${theme.fonts.robotoBold};
+    font-family: ${theme.fonts.robotoRegular};
     font-size: ${theme.fontSizes.inputDisabled};
     line-height: 16px;
     padding-top: 9px;
-    color: ${Colors.Muted};
+    color: ${Colors.Dark};
 `;
 
 export const errorSpan = (theme: Theme) => css`

@@ -41,7 +41,8 @@ const theme = {
         menuText: '14px',
     },
     breakpoints: {
-        sm: 576,
+        xs: 360,
+        sm: 600,
         md: 768,
         lg: 960,
         xl: 1280,
