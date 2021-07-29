@@ -36,6 +36,12 @@ export const Secondary = () => (
     <Button buttonType={ButtonType.Secondary}>Text</Button>
 );
 
+export const SecondaryDisabled = () => (
+    <Button buttonType={ButtonType.Secondary} disabled>
+        Text
+    </Button>
+);
+
 export const SecondaryAdd = () => (
     <Button
         buttonType={ButtonType.Secondary}
