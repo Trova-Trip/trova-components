@@ -5,6 +5,7 @@ import { Colors } from '../../shared/constants/colors';
 import { ButtonSize } from './buttonSize';
 
 export const button = (
+    theme: Theme,
     buttonType: ButtonType,
     selected: boolean,
     disabled: boolean,
@@ -147,6 +148,9 @@ export const button = (
         background-color: ${Colors.NavButtonExtraLightGray};
         color: ${Colors.LightGray};
     `}
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        ${buttonType === ButtonType.Text && ` min-width: 120px;`}
+    }
 `;
 
 export const buttonText = (

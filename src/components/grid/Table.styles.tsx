@@ -1,13 +1,13 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
+import { Colors } from '../../shared/constants/colors';
 
-export const table = () =>
+
+export const table = (theme: Theme) =>
     css`
         border-radius: 11px;
         overflow-x: visible;
-        width: auto !important;
-    `;
-
-export const tableContainer = () =>
-    css`
-        overflow-x: visible !important;
+        background-color: ${Colors.White};
+        @media (min-width: ${theme.breakpoints.md}px) {
+            min-width: 650px;
+        }
     `;
