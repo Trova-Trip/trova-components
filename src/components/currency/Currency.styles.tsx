@@ -39,7 +39,7 @@ export const innerContainer = (
     ${`background: ${disabled ? Colors.LightSilver : Colors.White}`};
     margin-top: 10px;
     width: ${theme.columns.twoColumns}px;
-    ${size === ComponentWidth.ExtraSmall && `max-width: 120px;`}
+    ${size === ComponentWidth.ExtraSmall && `max-width: 120px; margin-top: 0;`}
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }

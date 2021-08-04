@@ -43,6 +43,7 @@ const Button = React.forwardRef<HTMLInputElement, ButtonProps>(
             <div
                 data-testid="button"
                 css={button(
+                    theme,
                     buttonType,
                     selected,
                     disabled,

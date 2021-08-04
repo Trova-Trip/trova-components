@@ -8,6 +8,8 @@ export const row = (theme: Theme) =>
         th{
             font-weight: bold;
             color: ${Colors.TableDarkGray};
+            line-height: 1.2rem;
+            border-radius: inherit;
         }
         td {
             color: ${Colors.TableDarkGray};

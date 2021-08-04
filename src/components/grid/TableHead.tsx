@@ -4,6 +4,7 @@ import React from 'react';
 import MaterialTableHead from '@material-ui/core/TableHead';
 
 import TableHeadProps from './TableHead.types';
+import { tableHead } from './TableHead.styles';
 
 /**
  * Renders a <TableHead /> component
@@ -14,7 +15,7 @@ import TableHeadProps from './TableHead.types';
 
 const TableHead: React.FC<TableHeadProps> = ({ children, className }) => {
     return (
-        <MaterialTableHead className={className}>{children}</MaterialTableHead>
+        <MaterialTableHead css={tableHead()} className={className}>{children}</MaterialTableHead>
     );
 };
 
