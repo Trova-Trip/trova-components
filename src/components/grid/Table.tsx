@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, useTheme } from '@emotion/react';
+import { jsx } from '@emotion/react';
 import React from 'react';
 import MaterialTableContainer from '@material-ui/core/TableContainer';
 import MaterialTable from '@material-ui/core/Table';
 
 import TableProps from './Table.types';
-import { table } from './Table.styles';
+import { table, tableContainer } from './Table.styles';
 
 /**
  * Renders a <Table /> component
@@ -15,10 +15,9 @@ import { table } from './Table.styles';
  */
 
 const Table: React.FC<TableProps> = ({ children, className }) => {
-    const theme = useTheme();
     return (
-        <MaterialTableContainer className={className}>
-            <MaterialTable css={table(theme)}>{children}</MaterialTable>
+        <MaterialTableContainer css={tableContainer()} className={className}>
+            <MaterialTable css={table()}>{children}</MaterialTable>
         </MaterialTableContainer>
     );
 };
