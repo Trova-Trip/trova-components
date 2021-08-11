@@ -6,7 +6,7 @@ export const mainNavigation = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.lg + 1}px) {
         padding: 1.5rem 3.5rem 3rem 2rem;
     }
-    @media (max-width: ${theme.breakpoints.md}px) {
+    @media (max-width: ${theme.breakpoints.lg}px) {
         width: 100%;
         position: fixed;
         z-index: 1200;
@@ -15,20 +15,14 @@ export const mainNavigation = (theme: Theme) => css`
     box-sizing: border-box;
     background-color: ${Colors.White};
 `;
-export const mainNavigationMainContainer = (
-    theme: Theme,
-    anchor: boolean
-) => css`
+export const mainNavigationMainContainer = (theme: Theme) => css`
     display: flex;
     justify-content: space-between;
     @media (max-width: ${theme.breakpoints.lg}px) {
-        padding: 1.5rem;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
     }
     @media (max-width: ${theme.breakpoints.md}px) {
         padding: 1.5rem 0 1rem 0;
-        ${anchor === true &&
-        `position: sticky; background: white; 
-        top: 0;`}
     }
 `;
 export const mainNavigationSmallContainer = css`

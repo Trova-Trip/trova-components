@@ -34,7 +34,6 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
     profileImageUrl,
     onClickProfileImage,
     secondaryItems,
-    anchor = false,
     className,
     menuItems,
     onMobileMenuOpen,
@@ -67,7 +66,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
             css={mainNavigation(theme)}
             className={className}
         >
-            <div css={mainNavigationMainContainer(theme, anchor)}>
+            <div css={mainNavigationMainContainer(theme)}>
                 <div css={mainNavigationSmallContainer}>
                     <div>
                         <img
