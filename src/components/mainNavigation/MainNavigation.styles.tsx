@@ -32,6 +32,13 @@ export const mainNavigationSmallContainer = css`
 `;
 export const mainNavigationItemContainer = () => css`
     padding: 2rem 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: ${Colors.White};
 `;
 export const mainNavigationLogo = (theme: Theme) => css`
     @media (min-width: ${theme.breakpoints.md + 1}px) {

@@ -11,12 +11,12 @@ export const sidebar = (theme: Theme) => css`
         position: fixed;
         width: 100%;
         height: 100%;
-        z-index: 1;
+        z-index: 3;
         min-height: 100vh;
         overflow-y: auto;
     }
 
-    padding: 5rem 2rem 2rem;
+    padding: 5rem 1rem 2rem;
     box-sizing: border-box;
     background-color: ${Colors.White};
 `;
