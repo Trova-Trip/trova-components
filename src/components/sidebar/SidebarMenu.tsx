@@ -29,29 +29,24 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
         }
         setOpenMenu(!openMenu);
     }, [openMenu]);
+
+    const altText = openMenu ? 'Open' : 'Close';
+    const sidebarCss = openMenu ? sidebarMenuOpenImage : sidebarMenuCloseImage;
+
     return (
         <div
             data-testid="sidebar__menu"
             css={sidebarMenu}
             className={className}
         >
-            <div css={sidebarMenuDiv} onClick={() => toggle()}>
+            <div css={sidebarMenuDiv} onClick={toggle}>
                 <h5 css={sidebarMenuTitle(theme)}>{title}</h5>
-                {openMenu ? (
-                    <img
-                        alt="Open"
-                        src={imgArrow}
-                        css={sidebarMenuOpenImage}
-                        onClick={() => toggle()}
+                <img
+                    alt={altText}
+                    src={imgArrow}
+                    css={sidebarCss}
+                    onClick={toggle}
                     />
-                ) : (
-                    <img
-                        alt="Close"
-                        src={imgArrow}
-                        css={sidebarMenuCloseImage}
-                        onClick={() => toggle()}
-                    />
-                )}
             </div>
             {openMenu ? children : null}
         </div>
