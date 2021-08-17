@@ -7,15 +7,23 @@ export const sidebarMenu = css`
 export const sidebarMenuDiv = css`
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem 1rem 0.5rem;
 `;
 export const sidebarMenuTitle = (theme: Theme) => css`
     text-transform: uppercase;
     font-size: 13px;
     line-height: 15px;
     font-family: ${theme.fonts.robotoBold};
-    padding: 0 0 1rem 1rem;
     color: ${Colors.Gray};
 `;
-export const sidebarMenuDivImg = css`
-    padding: 0 1rem 0.7rem 0;
+
+export const sidebarMenuOpenImage = css`
+    transform: rotate(0deg);
+    transition: all 0.5s;
+`;
+
+export const sidebarMenuCloseImage = css`
+    transform: rotate(-90deg);
+    transition: all 0.5s;
 `;

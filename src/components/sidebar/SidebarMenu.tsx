@@ -8,7 +8,8 @@ import {
     sidebarMenu,
     sidebarMenuDiv,
     sidebarMenuTitle,
-    sidebarMenuDivImg,
+    sidebarMenuCloseImage,
+    sidebarMenuOpenImage,
 } from './SidebarMenu.styles';
 import imgArrow from '../../shared/images/icons/small gray arrow.svg';
 
@@ -28,15 +29,24 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
         }
         setOpenMenu(!openMenu);
     }, [openMenu]);
+
+    const altText = openMenu ? 'Open' : 'Close';
+    const sidebarCss = openMenu ? sidebarMenuOpenImage : sidebarMenuCloseImage;
+
     return (
         <div
             data-testid="sidebar__menu"
             css={sidebarMenu}
             className={className}
         >
-            <div css={sidebarMenuDiv} onClick={() => toggle()}>
+            <div css={sidebarMenuDiv} onClick={toggle}>
                 <h5 css={sidebarMenuTitle(theme)}>{title}</h5>
-                <img alt="Arrow" src={imgArrow} css={sidebarMenuDivImg} />
+                <img
+                    alt={altText}
+                    src={imgArrow}
+                    css={sidebarCss}
+                    onClick={toggle}
+                    />
             </div>
             {openMenu ? children : null}
         </div>

@@ -3,17 +3,20 @@ import { css, Theme } from '@emotion/react';
 import { Colors } from '../../shared/constants/colors';
 
 export const sidebar = (theme: Theme) => css`
-    @media (min-width: ${theme.breakpoints.md + 1}px) {
+    @media (min-width: ${theme.breakpoints.lg + 1}px) {
         min-width: 274px;
+        padding: 0 2rem;
     }
-    @media (max-width: ${theme.breakpoints.md}px) {
+    @media (max-width: ${theme.breakpoints.lg}px) {
         position: fixed;
         width: 100%;
         height: 100%;
-        z-index: 1;
+        z-index: 3;
         min-height: 100vh;
+        overflow-y: auto;
     }
-    padding: 0rem 2rem;
+
+    padding: 5rem 1rem 2rem;
     box-sizing: border-box;
     background-color: ${Colors.White};
 `;

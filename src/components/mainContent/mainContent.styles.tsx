@@ -7,7 +7,7 @@ export const mainContent = (theme: Theme) => css`
     background-color: ${Colors.PrimaryContentBackground};
     font-family: ${theme.fonts.robotoBold};
     width: 100%;
-    @media (max-width: ${theme.breakpoints.sm}px) {
+    @media (max-width: ${theme.breakpoints.lg}px) {
         border-radius: 0;
         padding: 5rem 1rem 2rem 1rem;
     }
