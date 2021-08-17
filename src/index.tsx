@@ -28,6 +28,7 @@ import { Cell, Row, Table, TableBody, TableHead } from './components/grid/';
 import Number from './components/number';
 import DatePicker from './components/TrovaDateTime/DatePicker';
 import TimePicker from './components/TrovaDateTime/TimePicker';
+import Option from './components/option/option';
 import Menu, { MenuItem } from './components/menu';
 import Loader, { LoaderSize } from './components/loader';
 import Currency from './components/currency';
@@ -86,4 +87,5 @@ export {
     RadioGroup,
     Dialog,
     isMobile,
+    Option,
 };
