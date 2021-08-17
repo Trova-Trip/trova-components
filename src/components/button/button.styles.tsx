@@ -180,7 +180,7 @@ export const buttonText = (
     ${icon &&
     size !== ButtonSize.Flexible &&
     `justify-content: space-around;
-    width: 100%;`}
+    width: 100%; align-items: center;`}
 `;
 
 export const buttonSubtext = (theme: Theme) => css`

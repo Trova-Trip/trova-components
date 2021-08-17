@@ -5,15 +5,14 @@ export const sidebarItem = (theme: Theme, selected: boolean) => css`
     background-color: white;
     border-radius: 13px;
     font-family: ${theme.fonts.robotoBold};
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     cursor: pointer;
     &:hover {
         background-color: #eff1f7;
         transition: 0.5s;
     }
-    margin: 0.5rem 0rem;
     &:last-child {
-        margin: 0.5rem 0 2rem 0;
+        padding: 0.75rem 1rem 2rem;
     }
     ${selected === true && `background-color: #eff1f7;`}
 `;
