@@ -31,4 +31,4 @@ jobs:
     - run: npm install -g yarn
     # similar to npm ci
     - run: yarn install --frozen-lockfile
-    - run: yarn npm publish
+    - run: npm publish
