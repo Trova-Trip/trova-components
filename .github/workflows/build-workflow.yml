@@ -30,6 +30,10 @@ jobs:
         cache: 'npm'
     - run: npm install -g yarn
     # similar to npm ci
+    - name: Set npm configs
+      run: |
+        git config --local user.name ${{ github.actor }}
+        git config --local user.email rolando@trovatrip.com
     - run: yarn install --frozen-lockfile
     - run: npm version patch
     - run: npm version #list current versions
