@@ -6,4 +6,6 @@ export default interface HeaderProps extends SimpleComponent{
     iconDescription?: string;
     backgroundImage: any;
     icon?: React.ReactNode;
+    badge?: React.ReactNode;
+    detail?: string;
 }

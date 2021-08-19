@@ -12,13 +12,13 @@ export const header = (theme: Theme, backgroundImage: any) => css`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 1.3rem;
+    padding: 1.5rem 1.5rem 2rem 2rem;
     font-family: ${theme.fonts.robotoBold};
     color: ${Colors.White};
     text-align: left;
     @media (max-width: ${theme.breakpoints.lg}px) {
         border-radius: 0;
-        padding: 8rem 1rem 2rem;
+        padding: 8rem 1rem 2rem 3rem;
         margin: 0 -1rem;
     }
 `;
@@ -26,25 +26,25 @@ export const header = (theme: Theme, backgroundImage: any) => css`
 export const headerTitle = (theme: Theme) => css`
     font-size: ${theme.fontSizes.h1};
     line-height: 40px;
-    padding: 1.5rem 0 1rem 2.31rem;
+    padding: 1.5rem 1rem 1rem 0;
     text-shadow: -1px 1px 1px ${Colors.TextShadowLight},
         -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.md}px) {
         font-size: ${theme.fontSizes.h1Mobile};
         line-height: 30px;
-        padding: 0.25rem 0 1rem 0;
+        padding: 0.25rem 1rem 1rem 0;
     }
 `;
 
 export const headerDetails = (theme: Theme) => css`
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     font-family: ${theme.fonts.robotoMedium};
     font-size: ${theme.fontSizes.pSmall};
     line-height: 16px;
     letter-spacing: 0.3px;
+    padding: 0 1rem 0 0;
     @media (max-width: ${theme.breakpoints.md}px) {
         font-size: ${theme.fontSizes.pSmallMobile};
         flex-direction: column;
@@ -52,12 +52,29 @@ export const headerDetails = (theme: Theme) => css`
     }
 `;
 
+export const headerDetailsInnerLeft = (theme: Theme) => css`
+    display: flex;
+    @media (max-width: ${theme.breakpoints.md}px) {
+        font-size: ${theme.fontSizes.pSmallMobile};
+        flex-wrap: wrap;
+    }
+`;
+export const headerDetailsInnerRight = (theme: Theme) => css`
+    display: flex;
+    align-items: center;
+    @media (max-width: ${theme.breakpoints.md}px) {
+        font-size: ${theme.fontSizes.pSmallMobile};
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+`;
+
 export const headerDates = (theme: Theme) => css`
-    padding: 0 0 0.75rem 2.31rem;
     text-shadow: -1px 1px 1px ${Colors.TextShadowMedium},
         -2px 2px 1px ${Colors.TextShadowExtraLight};
     @media (max-width: ${theme.breakpoints.md}px) {
-        padding: 0 0 0.3rem 0;
+        padding: 0 0 0.75rem 0;
         flex-basis: 100%;
     }
 `;
@@ -65,11 +82,20 @@ export const headerDates = (theme: Theme) => css`
 export const headerLocation = (theme: Theme) => css`
     display: flex;
     align-items: center;
-    padding: 0 0 0.75rem 1.5rem;
+    padding: 0 0 0 1.5rem;
     text-shadow: -1px 1px 1px ${Colors.TextShadowMedium},
         -2px 2px 1px ${Colors.TextShadowExtraLight};
-    @media (max-width: ${theme.breakpoints.md}px) {
-        padding: 0 0 0.25rem 0;
-        flex-basis: 100%;
+    svg {
+        padding-right: 0.5rem;
     }
+    @media (max-width: ${theme.breakpoints.md}px) {
+        padding: 0 0 0.75rem 0;
+        align-items: flex-start;
+    }
+`;
+
+export const headerDetailOrder = () => css`
+    padding: 0 1.5rem 0 0;
+    text-shadow: -1px 1px 1px ${Colors.TextShadowMedium},
+        -2px 2px 1px ${Colors.TextShadowExtraLight};
 `;

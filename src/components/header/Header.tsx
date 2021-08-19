@@ -9,6 +9,9 @@ import {
     headerDetails,
     headerDates,
     headerLocation,
+    headerDetailsInnerLeft,
+    headerDetailsInnerRight,
+    headerDetailOrder,
 } from './Header.styles';
 
 const Header: React.FC<HeaderProps> = ({
@@ -18,19 +21,33 @@ const Header: React.FC<HeaderProps> = ({
     backgroundImage,
     icon,
     className,
+    detail,
+    badge
 }) => {
     const theme = useTheme();
+    const labelDetail = 'Order #:';
+
     return (
         <div css={header(theme, backgroundImage)} className={className}>
             <p css={headerTitle(theme)}>{title}</p>
             <div css={headerDetails(theme)}>
-                <span css={headerDates(theme)}>{subtitle}</span>
-                {iconDescription && (
-                    <span css={headerLocation(theme)}>
-                        {icon && icon}
-                        {iconDescription}
-                    </span>
-                )}
+                <div css={headerDetailsInnerLeft(theme)}>
+                    <span css={headerDates(theme)}>{subtitle}</span>
+                    {iconDescription && (
+                        <span css={headerLocation(theme)}>
+                            {icon && icon}
+                            {iconDescription}
+                        </span>
+                    )}
+                </div>
+                <div css={headerDetailsInnerRight(theme)}>
+                    {detail && (
+                        <p css={headerDetailOrder()}>
+                            {labelDetail}<span>{detail}</span>
+                        </p>
+                    )}
+                    {badge && badge}
+                </div>
             </div>
         </div>
     );
