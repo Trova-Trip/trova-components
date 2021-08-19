@@ -1,10 +1,11 @@
 import React from 'react';
 import Icon from '../icon';
-
 import Header from './Header';
 import { IconName } from '../icon/';
+import Badge from '../badge/badge';
 
 import { Colors } from '../../shared/constants/colors';
+
 const imgBackground = require('../../shared/images/rails.png') as string;
 
 export default {
@@ -19,5 +20,12 @@ export const HeaderImage = () => (
         subtitle="Mon DD—DD, YYYY"
         icon={<Icon name={IconName.Location} color={Colors.Primary} />}
         iconDescription="Quito - Santa Cruz - Isabela"
+        detail="TTHSG7X"
+        badge={
+            <Badge
+                text={'Status: Pending'}
+                backgroundColor={Colors.LightOrange}
+            ></Badge>
+        }
     ></Header>
 );
