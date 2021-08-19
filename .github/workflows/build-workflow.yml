@@ -5,7 +5,7 @@ name: Trova Components CI
 
 on:
   push:
-    branches: [ master ]
+  #  branches: [ master ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -27,7 +27,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        registry-url: 'https://registry.npmjs.org'
+        scope: '@trova'
+    - run: |
+        echo "//https://registry.npmjs.org:_authToken=645790bd-c0be-4341-8872-45692cbe667" > ~/.npmrc
     - run: npm install -g yarn
     # similar to npm ci
     - name: Set npm configs
@@ -35,6 +38,6 @@ jobs:
         git config --local user.name ${{ github.actor }}
         git config --local user.email rolando@trovatrip.com
     - run: yarn install --frozen-lockfile
-    - run: npm version patch
-    - run: npm version #list current versions
+    - run: npm version patch -m "Release %s"
+    - run: git push
     - run: npm publish
