@@ -40,5 +40,5 @@ jobs:
             - run: npm version patch -m "Release %s"
             #- run: git push
             - run: npm publish
-            - env:
+              env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
