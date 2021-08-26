@@ -35,7 +35,10 @@ export const button = (
     min-width: 181px;
     min-height: 50px;
     box-sizing: border-box;
-    ${icon && `min-width: 202px;`}
+    ${icon &&
+    `min-width: 202px; 
+    padding: 0 1rem;
+    `}
     ${subtext &&
     `padding: 21px 0px;
     min-width: 157px;
@@ -179,7 +182,7 @@ export const buttonText = (
     `}
     ${icon &&
     size !== ButtonSize.Flexible &&
-    `justify-content: space-around;
+    `justify-content: space-between;
     width: 100%; align-items: center;`}
 `;
 
@@ -194,6 +197,8 @@ export const buttonChildren = () => css`
 `;
 
 export const iconContainer = (size: ButtonSize) => css`
+    padding-left: 0.5rem;
+    margin-top: 2px;
     ${size === ButtonSize.Flexible &&
     `
     margin-left: 0.8rem;

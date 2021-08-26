@@ -40,27 +40,31 @@ const daysOfTheWeek: Option[] = [
 ];
 
 export const SearchableDropdown = () => {
-    const [limitedOptions, setLimitedOptions] = useState<Option[]>(daysOfTheWeek);
+    const [limitedOptions, setLimitedOptions] = useState<Option[]>(
+        daysOfTheWeek
+    );
     const onSearch = (event, name, searchValue: string) => {
-        const newLimitedOptions = daysOfTheWeek.filter(({value}) => {
+        const newLimitedOptions = daysOfTheWeek.filter(({ value }) => {
             return value.includes(searchValue);
         });
         setLimitedOptions(newLimitedOptions);
     };
     const [dropDownValue, setValue] = useState<string>(``);
 
-    return <Dropdown
-        name="test"
-        value={dropDownValue}
-        onChange={(event, name, eventValue = ``) => {
-            setValue(eventValue);
-        }}
-        placeholder="Placeholder"
-        label="Form header"
-        size={ComponentWidth.Medium}
-        children={limitedOptions}
-        onSearch={onSearch}
-    />;
+    return (
+        <Dropdown
+            name="test"
+            value={dropDownValue}
+            onChange={(event, name, eventValue = ``) => {
+                setValue(eventValue);
+            }}
+            placeholder="Placeholder"
+            label="Form header"
+            size={ComponentWidth.Medium}
+            children={limitedOptions}
+            onSearch={onSearch}
+        />
+    );
 };
 
 export const ExtraSmallDropdown = () => (
@@ -298,6 +302,7 @@ export const MediumMultipleDropdown = () => {
             label="Form header"
             children={children}
             onSearch={action('search')}
+            size={ComponentWidth.Medium}
             placeholder="Placeholder"
             onChange={(e, name, eventValue) => {
                 setStateValue(eventValue);
