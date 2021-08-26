@@ -1,9 +1,10 @@
 import { SyntheticEvent } from 'react';
+import { SimpleComponent } from '../../shared/interfaces/SimpleComponent.types';
 import DialogHeaderProps from './dialogHeader.types';
 import { Colors } from '../../shared/constants/colors';
 import { ReactNode } from 'react';
 
-export default interface DialogProps {
+export default interface DialogProps extends SimpleComponent {
     children: ReactNode;
     header?: DialogHeaderProps;
     backgroundColor?: Colors;

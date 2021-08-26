@@ -9,6 +9,7 @@ import DialogContent from './_private/dialogContent';
 const Dialog = React.forwardRef<HTMLInputElement, DialogProps>(
     (
         {
+            className,
             children,
             header,
             backgroundColor = Colors.White,
@@ -28,6 +29,7 @@ const Dialog = React.forwardRef<HTMLInputElement, DialogProps>(
 
         return (
             <Modal
+                className={className}
                 disableEnforceFocus
                 disableAutoFocus
                 open={open}
