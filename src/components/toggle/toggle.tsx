@@ -31,26 +31,28 @@ const Toggle: React.FC<ToggleProps> = ({
     const theme = useTheme();
     const handleToggle = useCallback(
         (event: SyntheticEvent) => {
-            onChange ? onChange(event, name, value) : event.stopPropagation();
+            const eventValue: boolean = (event.target as HTMLInputElement)
+                .checked;
+            onChange
+                ? onChange(event, name, eventValue)
+                : event.stopPropagation();
         },
         [name, value, onChange]
     );
     return (
         <React.Fragment>
             <div css={mainContainer(error)} className={className}>
-                <input
-                    css={input()}
-                    type="checkbox"
-                    checked={value}
-                    disabled={disabled}
-                    onChange={handleToggle}
-                    name={name}
-                />
-                <span
-                    data-testid="toggle"
-                    css={slider(error)}
-                    onClick={handleToggle}
-                ></span>
+                <label>
+                    <input
+                        css={input()}
+                        type="checkbox"
+                        checked={value}
+                        disabled={disabled}
+                        onChange={handleToggle}
+                        name={name}
+                    />
+                    <span data-testid="toggle" css={slider(error)}></span>
+                </label>
             </div>
             {detail && <span css={detailSpan(theme)}>{detail}</span>}
             <ComponentFooter
