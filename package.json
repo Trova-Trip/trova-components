@@ -1,6 +1,6 @@
 {
     "name": "@trova/components",
-    "version": "0.1.36",
+    "version": "0.1.37",
     "description": "A set of beautiful and colorful React components to build a modern and beautiful application.",
     "main": "build/index.js",
     "scripts": {
