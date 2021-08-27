@@ -36,7 +36,7 @@ export const inputContainer = (
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 21px;
+    padding: .5rem .75rem;
     font-family: ${theme.fonts.robotoRegular};
     font-size: ${theme.fontSizes.input};
     line-height: 19px;
@@ -44,7 +44,7 @@ export const inputContainer = (
     background-color: ${Colors.White};
     ${disabled === false && `cursor: pointer;`}
     ${!error &&
-    `padding-left: 20px;
+    `
     :focus-within {
         border: 1px solid ${Colors.Active};
     }`}
@@ -55,7 +55,7 @@ export const inputContainer = (
         listVisible && `border-radius: 5px 5px 0px 0px;`
     }`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
-    ${size === ComponentWidth.Flexible && `padding-left: calc(14px + 1%);`}
+    ${size === ComponentWidth.Flexible && `width: 100%;`}
 `;
 
 export const input = (theme: Theme, size: ComponentWidth) => css`
@@ -65,6 +65,7 @@ export const input = (theme: Theme, size: ComponentWidth) => css`
     line-height: 19px;
     color: ${Colors.Dark};
     border: transparent;
+    cursor: pointer;
     ::-webkit-search-decoration,
     ::-webkit-search-cancel-button,
     ::-webkit-search-results-button,
@@ -80,7 +81,10 @@ export const input = (theme: Theme, size: ComponentWidth) => css`
     ${size === ComponentWidth.Small && `width:99px;`}
     ${size === ComponentWidth.Medium && `width:190px;`}
     ${size === ComponentWidth.ExtraSmall && `width:50px;`}
-    ${size === ComponentWidth.Flexible && `width:80%;`}
+    ${size === ComponentWidth.Flexible && `width:100%;`}
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        width: 100%;
+    }
 `;
 
 export const inputContainerMultipleDropdown = (
@@ -97,7 +101,7 @@ export const inputContainerMultipleDropdown = (
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 21px;
+    padding: .5rem .75rem;
     font-family: ${theme.fonts.robotoRegular};
     font-size: ${theme.fontSizes.input};
     line-height: 19px;
@@ -118,7 +122,7 @@ export const inputContainerMultipleDropdown = (
     } font-size: ${theme.fontSizes.extraSmallDropdown};`}
     ${size === ComponentWidth.Small && `width:159px;`}
     ${size === ComponentWidth.Medium && `width:249px;`}
-    ${size === ComponentWidth.Flexible && `padding-left: calc(14px + 1%);`}
+    ${size === ComponentWidth.Flexible && `width: 100%;`}
     @media (max-width: ${theme.breakpoints.sm}px) {
         width: 100%;
     }
@@ -179,14 +183,9 @@ export const iconContainer = (
     multiple: boolean
 ) => css`
     ${disabled === false && `cursor: pointer;`}
-    margin: 15px 20px 0 0;
+    margin-top: 2px;
     ${size === ComponentWidth.ExtraSmall && `margin: 2px 0 0 0;`}
-    ${size === ComponentWidth.ExtraSmall &&
-    multiple &&
-    `margin: 7px 0 0 0; padding-right: 9px;`}
-        flex: none;
-    align-self: start;
-    ${size === ComponentWidth.Flexible && `margin: 15px calc(18px + 2%) 0 0;`}
+    ${size === ComponentWidth.ExtraSmall && multiple && `margin: 2px 0 0 0; `}
 `;
 
 export const loadingIcon = () => css`

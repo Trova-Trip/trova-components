@@ -24,7 +24,7 @@ export const draggableCardStyle = (
 
         &:hover {
             background-color: ${Colors.White};
-            border: 1px solid ${Colors.BlackAlpha};
+            border: 1px dashed ${Colors.Silver};
             box-shadow: 0 1px 2px 0 rgb(60 64 67 / 40%),
                 0 1px 3px 1px rgb(60 64 67 / 22%);
             transform: translate3d(0px, -2px, 0px);

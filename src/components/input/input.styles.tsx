@@ -21,7 +21,7 @@ export const input = (
         border: 1px solid ${Colors.LightGray};
         min-height: 50px;
         margin-top: 10px;
-        padding-left: 21px;
+        padding: .5rem .75rem;
         font-family: ${theme.fonts.robotoRegular};
         font-size: ${theme.fontSizes.input};
         line-height: 19px;
@@ -154,20 +154,20 @@ export const inputContainer = (
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 21px;
+    padding: .5rem .75rem;
     font-family: ${theme.fonts.robotoRegular};
     font-size: ${theme.fontSizes.input};
     line-height: 19px;
     color: ${Colors.Dark};
     background-color: ${Colors.White};
     ${!error &&
-    `padding-left: 20px;
+    `
     :focus-within {
         border: 1px solid ${Colors.Active};
     }`}
     ${error && error.length && `border-color: ${Colors.Danger};`}
     svg {
-        margin-right: 20px;
+        margin-left: 12px;
     }
 `;
 
@@ -178,6 +178,7 @@ export const inputWithIcon = (theme: Theme, size: ComponentWidth) => css`
     line-height: 19px;
     color: ${Colors.Dark};
     border: transparent;
+    width: 90%;
     :disabled {
         background-color: ${Colors.White};
     }
@@ -186,4 +187,7 @@ export const inputWithIcon = (theme: Theme, size: ComponentWidth) => css`
     }
     ${size === ComponentWidth.Small && `width:99px;`}
     ${size === ComponentWidth.Medium && `width:190px;`}
+    @media (max-width: ${theme.breakpoints.sm}px) {
+        width: 100%;
+    }
 `;
